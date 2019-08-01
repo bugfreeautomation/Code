@@ -1,0 +1,28 @@
+package Constructor2;
+
+public class Main {
+	
+	/*
+	 * why we used this composition approach
+	 * Our problem has 3 main components/classes - Floor, Carpet and Calculator
+	 *	
+	 * 
+	 * 1. So, basically we define our 3 main component classes, we add all their fields with validation and 
+	 * add all the methods that need to be performed on those fields (POM appium way)
+	 * 
+	 * 2. While doing so we realised that Calculator actually makes use of properties of both Carpet and Floor
+	 * And its a HAS-A relationship ( bcoz calculator is-not a floor and is-not a carpet). Also multiple inheritance is not allowed
+	 * So we use composition and pass objects in constructor of Calculator to avoid code duplication
+	 * 
+	 * 3. And this lets calculator class use methods of both floor and carpet class with inheriting both (which is not even possible in java)
+	 */
+
+	public static void main(String[] args) {
+
+		Calculator cal = new  Calculator(new Floor(10,10), new Carpet(25));
+		cal.getTotalCost();
+		
+		
+	}
+
+}
