@@ -24,4 +24,5 @@ public class Main {
 			System.out.println(st.rollno + " " + st.name + " " + st.age);
 		}
 	}
+	
 }
